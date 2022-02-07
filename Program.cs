@@ -25,17 +25,47 @@ try
 	Console.WriteLine("O/S Info: ............  {0}", RuntimeInformation.OSDescription);
 	Console.WriteLine("");
 
-	Console.WriteLine("===============================================================");
-	var names = Enum.GetNames(typeof(Environment.SpecialFolder));
-	var values = Enum.GetValues(typeof(Environment.SpecialFolder));
-	for (int index = 0; index < names.Length; index++)
+	var pass = 0;
+	while (pass < 2)
 	{
-		Console.WriteLine($".... {names[index]} = ............");
-		var dirEnum = (Environment.SpecialFolder)Enum.Parse(typeof(Environment.SpecialFolder), names[index]);
-		Console.WriteLine($"{Environment.GetFolderPath(dirEnum)}");
 		Console.WriteLine();
+		Console.WriteLine("===============================================================");
+		switch (pass)
+		{
+			case 0:
+				Console.WriteLine("Have Definitions");
+				break;
+			case 1:
+				Console.WriteLine("No Definitions");
+				break;
+		}
+		Console.WriteLine("===============================================================");
+		var names = Enum.GetNames(typeof(Environment.SpecialFolder));
+		var values = Enum.GetValues(typeof(Environment.SpecialFolder));
+		for (int index = 0; index < names.Length; index++)
+		{
+			var dirEnum = (Environment.SpecialFolder)Enum.Parse(typeof(Environment.SpecialFolder), names[index]);
+			var thisLocation = Environment.GetFolderPath(dirEnum);
+			switch (pass)
+			{
+				case 0:
+					if (!string.IsNullOrWhiteSpace(thisLocation))
+					{
+						Console.WriteLine($"{names[index]}");
+						Console.WriteLine($"    .....: {thisLocation}");
+					}
+					break;
+
+				case 1:
+					if (string.IsNullOrWhiteSpace(thisLocation))
+					{
+						Console.WriteLine($"{names[index]}");
+					}
+					break;
+			}
+		}
+		pass++;
 	}
-	Console.WriteLine("===============================================================");
 }
 catch (Exception ex)
 {
