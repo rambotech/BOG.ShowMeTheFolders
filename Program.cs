@@ -17,6 +17,8 @@ try
 		RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? "Linux" : (
 		RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "Windows" : "OSX"));
 
+	RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "Windows" : "OSX"));
+
 	Console.WriteLine("");
 	Console.WriteLine("HostName: ............  {0}", Environment.MachineName);
 	Console.WriteLine("Platform: ............  {0}", osPlatform);
