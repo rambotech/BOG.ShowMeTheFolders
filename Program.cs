@@ -15,9 +15,8 @@ try
 	var osPlatform =
 		RuntimeInformation.IsOSPlatform(OSPlatform.FreeBSD) ? "FreeBSD" : (
 		RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? "Linux" : (
-		RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "Windows" : "OSX"));
-
-	RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "Windows" : "OSX"));
+		RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "Windows" : (
+		RuntimeInformation.IsOSPlatform(OSPlatform.OSX) ? "OSX" : "Unnknown")));
 
 	Console.WriteLine("");
 	Console.WriteLine("HostName: ............  {0}", Environment.MachineName);
