@@ -10,8 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BOG.SwissArmyKnife" Version="1.7.8" />
-    <PackageReference Include="Figgle" Version="0.4.0" />
+    <PackageReference Include="BOG.SwissArmyKnife" Version="1.7.13" />
+    <PackageReference Include="Figgle" Version="0.5.1" />
   </ItemGroup>
 
 </Project>
