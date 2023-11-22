@@ -1,6 +1,6 @@
 # BOG.ShowMeTheFolders
 
-.NET7 : Simply enumerates the value of the special folders on the host computer to its console.
+Simply enumerates the value of the special folders on the host computer to its console.
 
 Determines the concrete answer for each enumeration on the running computer.  The list with values are displayed
 first, followed by a list of those special folders with no value defined.
